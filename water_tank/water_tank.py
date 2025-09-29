@@ -7,6 +7,7 @@ class WaterTank:
         self.poids = poids
         self.capacite_max = capacite_max
         self.niveau = niveau
+        WaterTank.total_volume = niveau
 
     def remplir(self, quantite):
         if self.niveau + quantite > self.capacite_max:
