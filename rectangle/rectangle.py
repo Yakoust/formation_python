@@ -1,31 +1,31 @@
 class Rectangle:
     """ Definition d'un rectangle """
 
-    def __init__(self, width, height):
+    def __init__(self, width: float, height: float):
         self.width = width
         self.height = height
 
-    def perimeter(self):
+    def perimeter(self) -> float:
         return 2 * self.width + self.height
 
-    def area(self):
+    def area(self) -> float:
         return self.width * self.height
 
 class Parallelepiped(Rectangle):
     """ Definition d'un parallélépipède """
 
-    def __init__(self, width, height, depth):
+    def __init__(self, width: float, height: float, depth: float):
         super().__init__(width, height)
         self.depth = depth
 
-    def volume(self):
+    def volume(self) -> float:
         return self.width * self.height * self.depth
 
-    def perimeter(self):
+    def perimeter(self) -> float:
         return 4 * (self.width + self.height + self.depth)
 
-    def area(self):
-        return 2*((self.width * self.height)+(self.width * self.depth) + (self.height * self.depth))
+    def area(self) -> float:
+        return 2*((self.width * self.height) + (self.width * self.depth) + (self.height * self.depth))
 
 
 if __name__ == "__main__":
