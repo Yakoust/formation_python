@@ -6,8 +6,8 @@ class Interface(ABC):
     @classmethod
     def __subclasshook__(cls, subclass):
         if cls is Interface:
-            return NotImplemented
-        return all(any(m in B.__dict__ for B in subclass.__mro__) for m in cls.__methods__)
+            return all(any(m in B.__dict__ for B in subclass.__mro__) for m in cls.__methods__)
+        return NotImplemented
 
 
 class Container(Interface):
