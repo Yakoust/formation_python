@@ -23,9 +23,8 @@ class Contact(Address, Person):
         Address.__init__(self, street, city)
 
     def show(self):
-        print(self.name + " - " + self.email)
-        print(self.street)
-        print(self.city)
+        Person.show(self)
+        Address.show(self)
 
 class Notebook:
     def __init__(self):
