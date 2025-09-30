@@ -1,6 +1,3 @@
-from ftplib import print_line
-
-
 class Person:
     def __init__(self, nom: str, prenom: str, tel: str, email: str):
         self.nom = nom
