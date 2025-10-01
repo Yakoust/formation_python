@@ -21,18 +21,28 @@ class Interval:
         return f"Interval : {self.start} : {self.end}"
 
     def __contains__(self, item) -> bool:
+        if not isinstance(item, int):
+            raise TypeError
         return self.start <= item <= self.end
 
     def __add__(self, other):
+        if not isinstance(other, Interval):
+            raise TypeError
         return Interval(self.start + other.start, self.end + other.end)
 
     def __sub__(self, other):
+        if not isinstance(other, Interval):
+            raise TypeError
         return Interval(self.start - other.start, self.end - other.end)
 
     def __mul__(self, other):
+        if not isinstance(other, Interval):
+            raise TypeError
         return Interval(self.start * other.start, self.end * other.end)
 
     def __and__(self, other):
+        if not isinstance(other, Interval):
+            raise TypeError
         new_start = max(self.start, other.start)
         new_end = min(self.end, other.end)
         if new_start <= new_end:
